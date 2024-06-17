@@ -150,7 +150,7 @@ table inet filter {
                 type filter hook forward priority filter; policy drop;
                 tcp flags & (syn | rst) == syn tcp option maxseg size set rt mtu
                 ct state { established, related } accept
-                iif "end0" oifname "wg0" accept
+                iif "eth0" oifname "wg0" accept
         }
 
         chain output {
